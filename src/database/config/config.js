@@ -1,11 +1,11 @@
 
 module.exports = {
   "development": {
-    "username": '',
+    "username": 'root',
     "password": '',
-    "database": '',
-    "host": '',
-    "dialect": ''
+    "database": 'movies_db',
+    "host": 'localhost',
+    "dialect": 'mysql'
   },
   "test": {
     "username": "root",
