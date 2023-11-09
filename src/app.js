@@ -1,12 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const moviesRouter = require('./routes/moviesRouter');
 
 const server = express();
 
 server.use(express.json());
 server.use(morgan('dev'));
 
-
+server.use(moviesRouter);
 
 server.get('/', (req,res) => {
     res.send("<h5>I'm here</h5>");
