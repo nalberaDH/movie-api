@@ -1,17 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
 const moviesRouter = require('./routes/moviesRouter');
-
+const userRouter = require('./routes/userRouter');
 const server = express();
 
 server.use(express.json());
 server.use(morgan('dev'));
+server.use(express.urlencoded({extended: false}));
 
 server.use(moviesRouter);
+server.use(userRouter);
 
-server.get('/', (req,res) => {
-    res.send("<h5>I'm here</h5>");
-});
 
 server.use((err, req, res, next) => {
     const status = err.status || 500;
